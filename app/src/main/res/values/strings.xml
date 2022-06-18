@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">3gram</string>
+    <string name="about_info">High level experience in web design and development knowledge, producing quality work.</string>
+    <string name="follow_us">Follow us</string>
+    <string name="image_description">image</string>
+    <string name="type_your_comment_here">Type your comment here</string>
+    <string name="send">Send</string>
+    <string name="album_item_place_title">Make up Masterclass w/ the best in the industry</string>
+</resources>
