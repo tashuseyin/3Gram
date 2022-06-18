@@ -3,14 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/default_pager_dot.xml" value="0.306" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/edittext_bg.xml" value="0.2665" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_facebook_logo.xml" value="0.2665" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_logo.xml" value="0.2665" />
+        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/selected_pager_dot.xml" value="0.306" />
+        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/tab_indicator_selector.xml" value="0.306" />
+        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/tab_pager_selector.xml" value="0.306" />
+        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/viewpager_bg.xml" value="0.306" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/layout/album_item_layout.xml" value="0.3625" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/layout/fragment_about.xml" value="0.33" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/layout/fragment_albums.xml" value="0.3625" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/layout/fragment_comments.xml" value="0.33" />
+        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/layout/slider_image_container.xml" value="0.3625" />
       </map>
     </option>
   </component>
