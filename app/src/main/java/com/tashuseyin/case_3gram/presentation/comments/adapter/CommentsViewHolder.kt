@@ -10,7 +10,7 @@ class CommentsViewHolder(private val binding: CommentItemLayoutBinding) :
     fun bind(commentItem: CommentItem) {
         binding.apply {
             commentsName.text = commentItem.name
-            commentsBody.text = commentItem.body
+            commentsBody.text = commentItem.body!!.replace("\n", "")
         }
     }
 }

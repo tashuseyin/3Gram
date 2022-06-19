@@ -8,8 +8,6 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.tashuseyin.case_3gram.MainActivity
-import com.tashuseyin.case_3gram.R
 import com.tashuseyin.case_3gram.databinding.FragmentAlbumsBinding
 import com.tashuseyin.case_3gram.presentation.albums.adapter.HomeAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,12 +44,8 @@ class AlbumsFragment : Fragment() {
                 if (state.errorText.isNotBlank()) {
                     binding.errorText.text = state.errorText
                 }
-                if (state.photoList.isNotEmpty() && state.albumList.isNotEmpty()) {
-                    state.albumList.forEach { albumItem ->
-                        albumAdapter.setData(state.albumList, state.photoList.filter { photoItem ->
-                            albumItem.id == photoItem.albumId
-                        })
-                    }
+                if (state.albumList.isNotEmpty()) {
+                    albumAdapter.setData(state.albumList)
                     binding.recyclerview.adapter = albumAdapter
                 }
             }

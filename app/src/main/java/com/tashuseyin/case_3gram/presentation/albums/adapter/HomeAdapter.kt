@@ -8,8 +8,7 @@ import com.tashuseyin.case_3gram.domain.model.AlbumItem
 import com.tashuseyin.case_3gram.domain.model.PhotoItem
 
 class HomeAdapter : RecyclerView.Adapter<HomeViewHolder>() {
-    var albumList = emptyList<AlbumItem>()
-    var photoItemList = emptyList<PhotoItem>()
+    private var albumList = emptyList<Pair<AlbumItem, List<PhotoItem>>>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         val binding =
@@ -19,20 +18,13 @@ class HomeAdapter : RecyclerView.Adapter<HomeViewHolder>() {
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         holder.bind(albumList[position])
-        setPhotoItemRecycler(holder.itemRecycler!!)
     }
 
     override fun getItemCount(): Int {
         return albumList.size
     }
 
-    private fun setPhotoItemRecycler(recyclerView: RecyclerView) {
-        val itemRecyclerAdapter = PhotoAdapter(photoItemList)
-        recyclerView.adapter = itemRecyclerAdapter
-    }
-
-    fun setData(newAlbumList: List<AlbumItem>, newPhotoList: List<PhotoItem>) {
+    fun setData(newAlbumList: List<Pair<AlbumItem, List<PhotoItem>>>) {
         this.albumList = newAlbumList
-        this.photoItemList = newPhotoList
     }
 }

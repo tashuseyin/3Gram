@@ -2,20 +2,19 @@ package com.tashuseyin.case_3gram.presentation.albums
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tashuseyin.case_3gram.common.Resource
-import com.tashuseyin.case_3gram.domain.use_case.get_albums.GetAlbumsUseCase
-import com.tashuseyin.case_3gram.domain.use_case.get_photos.GetPhotosUseCase
+import com.tashuseyin.case_3gram.data.toDomain
+import com.tashuseyin.case_3gram.domain.repository.Case3GramRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
+import retrofit2.HttpException
+import java.io.IOException
 import javax.inject.Inject
 
 @HiltViewModel
 class AlbumViewModel @Inject constructor(
-    private val getAlbumsUseCase: GetAlbumsUseCase,
-    private val getPhotosUseCase: GetPhotosUseCase
+    private val repository: Case3GramRepository
 ) : ViewModel() {
 
     private val _state: MutableStateFlow<AlbumState> = MutableStateFlow(AlbumState())
@@ -24,41 +23,28 @@ class AlbumViewModel @Inject constructor(
 
     init {
         getAlbums()
-        getPhotos()
     }
 
     private fun getAlbums() {
-        getAlbumsUseCase().onEach { result ->
-            when (result) {
-                is Resource.Success -> {
-                    _state.value = AlbumState(albumList = result.data ?: emptyList())
-                }
-                is Resource.Loading -> {
-                    _state.value = AlbumState(isLoading = true)
-                }
+        viewModelScope.launch {
+            _state.value = AlbumState(isLoading = true)
+            try {
+                val albums = repository.getAlbums().map { it.toDomain() }
+                val photos = repository.getPhotos().map { it.toDomain() }
 
-                is Resource.Error -> {
-                    _state.value =
-                        AlbumState(errorText = result.message ?: "An unexcepted error occurred")
+                val albumPhotoPair = albums.map { album ->
+                    album to photos.filter { photo ->
+                        album.id == photo.albumId
+                    }
                 }
+                _state.value = AlbumState(albumList = albumPhotoPair)
+            } catch (e: HttpException) {
+                _state.value =
+                    AlbumState(errorText = e.localizedMessage ?: "An unexpected error occurred")
+            } catch (e: IOException) {
+                _state.value =
+                    AlbumState(errorText = "Couldn't reach server. Check your internet connection.")
             }
-        }.launchIn(viewModelScope)
-    }
-
-    private fun getPhotos() {
-        getPhotosUseCase().onEach { result ->
-            when (result) {
-                is Resource.Success -> {
-                    _state.value = AlbumState(photoList = result.data ?: emptyList())
-                }
-                is Resource.Loading -> {
-                    _state.value = AlbumState(isLoading = true)
-                }
-                is Resource.Error -> {
-                    _state.value =
-                        AlbumState(errorText = result.message ?: "An unexcepted error occurred")
-                }
-            }
-        }.launchIn(viewModelScope)
+        }
     }
 }
