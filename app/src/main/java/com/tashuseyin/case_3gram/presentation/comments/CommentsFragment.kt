@@ -1,18 +1,16 @@
 package com.tashuseyin.case_3gram.presentation.comments
 
-import android.graphics.Color
 import android.os.Bundle
-import android.text.Html
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.PackageManagerCompat.LOG_TAG
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
 import com.tashuseyin.case_3gram.R
+import com.tashuseyin.case_3gram.common.extension.hideKeyboard
 import com.tashuseyin.case_3gram.databinding.FragmentCommentsBinding
 import com.tashuseyin.case_3gram.presentation.BindingFragment
 import com.tashuseyin.case_3gram.presentation.comments.adapter.CommentsAdapter
@@ -68,6 +66,7 @@ class CommentsFragment : BindingFragment<FragmentCommentsBinding>() {
 
     private fun setAlertDialog() {
         binding.sendButton.setOnClickListener {
+            hideKeyboard(it)
             if (validateComment()) {
                 binding.progressbar.isVisible = true
                 lifecycleScope.launch {
