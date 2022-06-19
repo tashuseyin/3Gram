@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.tashuseyin.case_3gram.databinding.FragmentAlbumsBinding
+import com.tashuseyin.case_3gram.presentation.albums.adapter.HomeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -20,6 +21,7 @@ class AlbumsFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val albumViewModel: AlbumViewModel by viewModels()
+    private val albumAdapter = HomeAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,9 +43,18 @@ class AlbumsFragment : Fragment() {
                 if (state.errorText.isNotBlank()) {
                     binding.errorText.text = state.errorText
                 }
+                if (state.photoList.isNotEmpty() && state.albumList.isNotEmpty()) {
+                    state.albumList.forEach { albumItem ->
+                        albumAdapter.setData(state.albumList, state.photoList.filter { photoItem ->
+                            albumItem.id == photoItem.albumId
+                        })
+                    }
+                    binding.recyclerview.adapter = albumAdapter
+                }
             }
         }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
