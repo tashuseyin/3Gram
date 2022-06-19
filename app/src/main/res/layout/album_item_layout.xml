@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="350dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardCornerRadius="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="280dp"
     android:layout_marginStart="12dp"
-    android:layout_marginEnd="12dp"
     android:layout_marginTop="8dp"
-    android:elevation="5dp">
+    android:layout_marginEnd="12dp"
+    android:elevation="5dp"
+    app:cardCornerRadius="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,30 +29,18 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/album_item_place_title" />
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/view_pager"
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/slider_image"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:layout_margin="8dp"
-            android:clickable="false"
             android:background="@drawable/viewpager_bg"
+            android:clickable="false"
+            app:iss_selected_dot="@drawable/ic_selected_tab_indicator"
+            app:iss_unselected_dot="@drawable/ic_default_tab_indicator"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/album_title" />
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="0dp"
-            android:layout_height="20dp"
-            android:background="@android:color/transparent"
-            android:clickable="false"
-            app:layout_constraintEnd_toEndOf="@+id/view_pager"
-            app:layout_constraintStart_toStartOf="@+id/view_pager"
-            app:layout_constraintTop_toBottomOf="@+id/view_pager"
-            app:tabBackground="@drawable/tab_pager_selector"
-            app:tabGravity="center"
-            app:tabIndicatorHeight="0dp" />
-
 
         <TextView
             android:id="@+id/album_detail"
@@ -65,9 +53,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+            app:layout_constraintTop_toBottomOf="@+id/slider_image"
             tools:text="@string/about_info" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

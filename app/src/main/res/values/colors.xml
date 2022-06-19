@@ -13,10 +13,8 @@
     <color name="album_item_text_color">#2C2C2C</color>
     <color name="card_color">#060740</color>
     <color name="edittext_color">#F8F8F8</color>
-
+    <color name="avatar_color">#00CC99</color>
     <color name="tab_indicator_color">#C4C4C4</color>
 
-    <color name="item_text_color_state_true">#5458F7</color>
-    <color name="item_text_color_state_false">#9798B4</color>
-    <color name="item_background_state_true">#F3F3F6</color>
+    <color name="comment_time_color">#B4BBC6</color>
 </resources>

@@ -8,12 +8,12 @@ import retrofit2.http.GET
 
 interface Case3GramApi {
 
-    @GET(Constant.albums)
+    @GET(Constant.ALBUMS)
     suspend fun getAlbums(): AlbumsDto
 
-    @GET(Constant.photos)
+    @GET(Constant.PHOTOS)
     suspend fun getPhotos(): PhotosDto
 
-    @GET(Constant.comments)
+    @GET(Constant.COMMENTS)
     suspend fun getComments(): CommentsDto
 }

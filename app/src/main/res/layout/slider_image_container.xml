@@ -9,13 +9,13 @@
     android:focusableInTouchMode="false">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/university_image"
+        android:id="@+id/album_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:shapeAppearanceOverlay="@style/RoundedSquare"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/RoundedSquare"
         tools:src="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>
