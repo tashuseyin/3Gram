@@ -27,7 +27,7 @@ class CommentsViewModel @Inject constructor(
     private fun getComments() {
         viewModelScope.launch {
             _state.value = CommentsState(isLoading = true)
-            try {
+            try     {
                 val response = repository.getComments().map { it.toDomain() }
                 _state.value = CommentsState(commentsList = response)
             } catch (e: HttpException) {

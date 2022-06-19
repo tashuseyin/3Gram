@@ -9,6 +9,7 @@
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/edittext_bg.xml" value="0.2665" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_about_logo.xml" value="0.2905" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_avatar.xml" value="0.2905" />
+        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.347" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_baseline_navigate_next_24.xml" value="0.2905" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_comment.xml" value="0.2905" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_default_tab_indicator.xml" value="0.1775" />
@@ -32,7 +33,7 @@
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/viewpager_bg.xml" value="0.306" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/layout/album_item_layout.xml" value="0.3625" />
-        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/layout/comment_item_layout.xml" value="0.33" />
+        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/layout/comment_item_layout.xml" value="0.3779527559055118" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/layout/custom_toolbar.xml" value="0.3625" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/layout/fragment_about.xml" value="0.33" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/layout/fragment_albums.xml" value="0.3625" />

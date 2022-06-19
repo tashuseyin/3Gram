@@ -14,6 +14,7 @@ import com.tashuseyin.case_3gram.R
 import com.tashuseyin.case_3gram.common.extension.hideKeyboard
 import com.tashuseyin.case_3gram.databinding.FragmentCommentsBinding
 import com.tashuseyin.case_3gram.presentation.BindingFragment
+import com.tashuseyin.case_3gram.presentation.SharedViewModel
 import com.tashuseyin.case_3gram.presentation.comments.adapter.CommentsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
@@ -24,6 +25,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class CommentsFragment : BindingFragment<FragmentCommentsBinding>() {
     private val commentsViewModel: CommentsViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by viewModels()
     private lateinit var alertDialog: AlertDialog.Builder
     private val adapter = CommentsAdapter()
 
@@ -33,6 +35,7 @@ class CommentsFragment : BindingFragment<FragmentCommentsBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        sharedViewModel.saveToolbarTitleState(true)
         (activity as MainActivity).toolbarTitleChange(getString(R.string.comments))
         observeUI()
         setAlertDialog()
@@ -91,5 +94,4 @@ class CommentsFragment : BindingFragment<FragmentCommentsBinding>() {
         alertDialog.setIcon(R.drawable.ic_comment)
         alertDialog.setPositiveButton("OK") { _, _ -> }.create()
     }
-
 }

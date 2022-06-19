@@ -20,7 +20,7 @@
         tools:src="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/slide_button"
+        android:id="@+id/slide_next_button"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginEnd="16dp"
@@ -28,6 +28,18 @@
         android:src="@drawable/ic_baseline_navigate_next_24"
         app:layout_constraintBottom_toBottomOf="@+id/album_image"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/album_image" />
+
+    <ImageView
+        android:id="@+id/slide_before_button"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/image_description"
+        android:visibility="invisible"
+        android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+        app:layout_constraintBottom_toBottomOf="@+id/album_image"
+        app:layout_constraintStart_toStartOf="@+id/album_image"
         app:layout_constraintTop_toTopOf="@+id/album_image" />
 
 

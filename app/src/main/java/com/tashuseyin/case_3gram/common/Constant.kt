@@ -13,4 +13,7 @@ object Constant {
     const val MESSAGE = "https://www.messenger.com/"
     const val INSTAGRAM = "https://www.instagram.com/"
     const val FIGMA = "https://www.figma.com/files/recent?fuid=955110793729634808"
+
+    const val TOOLBAR_TITLE_STATE = "toolbarTitleState"
+    const val PREFERENCES_NAME = "case3GramPreferences"
 }
