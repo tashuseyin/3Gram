@@ -11,6 +11,10 @@ class CommentsViewHolder(private val binding: CommentItemLayoutBinding) :
         binding.apply {
             commentsName.text = commentItem.name
             commentsBody.text = commentItem.body!!.replace("\n", "")
+            val emailList = commentItem.email?.split("@")
+            val avatarName =
+                emailList!![0][0].toString().uppercase() + emailList[1][0].toString().uppercase()
+            avatarTitle.text = avatarName
         }
     }
 }
