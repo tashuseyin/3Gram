@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.viewbinding.ViewBinding
+import com.tashuseyin.case_3gram.MainActivity
+import com.tashuseyin.case_3gram.R
 import com.tashuseyin.case_3gram.common.Constant
 import com.tashuseyin.case_3gram.databinding.FragmentAboutBinding
 import com.tashuseyin.case_3gram.presentation.BindingFragment
@@ -17,6 +19,8 @@ class AboutFragment : BindingFragment<FragmentAboutBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        (activity as MainActivity).toolbarTitleChange(getString(R.string.about))
         setListener()
     }
 

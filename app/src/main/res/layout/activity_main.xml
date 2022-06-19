@@ -30,31 +30,44 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="16dp"
-            android:src="@drawable/ic_vector"
             android:contentDescription="@string/image_description"
+            android:src="@drawable/ic_vector"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar"
             app:layout_constraintStart_toStartOf="@+id/toolbar"
             app:layout_constraintTop_toTopOf="@id/toolbar" />
 
 
-        <TextView
-            android:id="@+id/logo"
+        <ImageView
+            android:id="@+id/toolbar_logo"
             android:layout_width="100dp"
             android:layout_height="30dp"
+            android:contentDescription="@string/image_description"
             android:background="@drawable/ic_logo"
             app:layout_constraintBottom_toBottomOf="@+id/avatar"
             app:layout_constraintEnd_toStartOf="@+id/avatar"
             app:layout_constraintStart_toEndOf="@+id/navigate_icon"
             app:layout_constraintTop_toTopOf="@+id/avatar" />
 
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans"
+            android:textAlignment="center"
+            android:textColor="@color/text_color"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/avatar"
+            app:layout_constraintEnd_toStartOf="@+id/avatar"
+            app:layout_constraintStart_toEndOf="@+id/navigate_icon"
+            app:layout_constraintTop_toTopOf="@+id/avatar" />
 
         <ImageView
             android:id="@+id/avatar"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/ic_avatar"
             android:contentDescription="@string/image_description"
+            android:src="@drawable/ic_avatar"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar"
             app:layout_constraintEnd_toEndOf="@+id/toolbar"
             app:layout_constraintTop_toTopOf="@+id/toolbar" />
@@ -92,6 +105,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/header_layout"
+        app:itemTextColor="@color/nav_drawer_item_text_color"
         app:menu="@menu/nav_drawer_menu" />
 
 

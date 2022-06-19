@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2905" />
+        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable-v24/nav_drawer_item_bg.xml" value="0.1865" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/default_pager_dot.xml" value="0.306" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/edittext_bg.xml" value="0.2665" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_about_logo.xml" value="0.2905" />
@@ -18,8 +19,12 @@
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2905" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_logo.xml" value="0.2665" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_message_logo.xml" value="0.2905" />
+        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_overview_selected.xml" value="0.3" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_selected_tab_indicator.xml" value="0.1775" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/ic_social.xml" value="0.2905" />
+        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/item_bg.xml" value="0.3" />
+        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/nav_dawer_item_bg.xml" value="0.3" />
+        <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/nav_drawer_item_bg.xml" value="0.1865" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/selected_pager_dot.xml" value="0.306" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/splash_logo.xml" value="0.2905" />
         <entry key="..\:/Users/Monster/AndroidStudioProjects/3gram/app/src/main/res/drawable/tab_indicator_selector.xml" value="0.306" />

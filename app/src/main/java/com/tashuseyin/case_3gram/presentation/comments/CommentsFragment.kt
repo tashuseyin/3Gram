@@ -9,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
+import com.tashuseyin.case_3gram.MainActivity
 import com.tashuseyin.case_3gram.R
 import com.tashuseyin.case_3gram.common.extension.hideKeyboard
 import com.tashuseyin.case_3gram.databinding.FragmentCommentsBinding
@@ -32,6 +33,7 @@ class CommentsFragment : BindingFragment<FragmentCommentsBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        (activity as MainActivity).toolbarTitleChange(getString(R.string.comments))
         observeUI()
         setAlertDialog()
     }

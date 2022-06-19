@@ -3,6 +3,7 @@ package com.tashuseyin.case_3gram
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -29,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
-        binding.toolbar.title = ""
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.albumsFragment,
@@ -44,5 +44,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+
+    fun toolbarTitleChange(title: String) {
+        binding.toolbarTitle.text = title
+        binding.toolbarLogo.isVisible = false
     }
 }

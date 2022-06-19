@@ -8,6 +8,8 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.tashuseyin.case_3gram.MainActivity
+import com.tashuseyin.case_3gram.R
 import com.tashuseyin.case_3gram.databinding.FragmentAlbumsBinding
 import com.tashuseyin.case_3gram.presentation.albums.adapter.HomeAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,6 +35,7 @@ class AlbumsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         observeUI()
     }
 

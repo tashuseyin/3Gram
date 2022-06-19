@@ -17,4 +17,5 @@
     <color name="tab_indicator_color">#C4C4C4</color>
 
     <color name="comment_time_color">#B4BBC6</color>
+    <color name="item_default_color">#9798B4</color>
 </resources>
