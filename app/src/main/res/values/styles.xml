@@ -4,4 +4,9 @@
     <style name="RoundedSquare">
         <item name="cornerSize">12dp</item>
     </style>
+
+    <style name="NewFontStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/nunito_sans</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

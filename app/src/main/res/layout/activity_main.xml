@@ -104,7 +104,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:theme="@style/DrawerTextStyle"
+        app:itemTextAppearance="@style/NewFontStyle"
+        app:itemBackground="@drawable/nav_drawer_item_bg"
         app:headerLayout="@layout/header_layout"
         app:itemTextColor="@color/nav_drawer_item_text_color"
         app:menu="@menu/nav_drawer_menu" />
