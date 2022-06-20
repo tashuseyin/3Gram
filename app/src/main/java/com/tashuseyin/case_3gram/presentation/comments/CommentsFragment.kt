@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
 import com.tashuseyin.case_3gram.MainActivity
 import com.tashuseyin.case_3gram.R
+import com.tashuseyin.case_3gram.common.LoadingDialog
 import com.tashuseyin.case_3gram.common.extension.hideKeyboard
 import com.tashuseyin.case_3gram.databinding.FragmentCommentsBinding
 import com.tashuseyin.case_3gram.presentation.BindingFragment
@@ -26,7 +27,9 @@ import kotlinx.coroutines.launch
 class CommentsFragment : BindingFragment<FragmentCommentsBinding>() {
     private val commentsViewModel: CommentsViewModel by viewModels()
     private val sharedViewModel: SharedViewModel by viewModels()
+
     private lateinit var alertDialog: AlertDialog.Builder
+    private var loadingDialog: LoadingDialog? = null
     private val adapter = CommentsAdapter()
 
     override val bindingInflater: (LayoutInflater) -> ViewBinding
@@ -36,6 +39,7 @@ class CommentsFragment : BindingFragment<FragmentCommentsBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         sharedViewModel.saveToolbarTitleState(true)
+        loadingDialog = LoadingDialog((activity as MainActivity))
         (activity as MainActivity).toolbarTitleChange(getString(R.string.comments))
         observeUI()
         setAlertDialog()
@@ -73,10 +77,10 @@ class CommentsFragment : BindingFragment<FragmentCommentsBinding>() {
         binding.sendButton.setOnClickListener {
             hideKeyboard(it)
             if (validateComment()) {
-                binding.progressbar.isVisible = true
+                loadingDialog?.startLoadingDialog()
                 lifecycleScope.launch {
                     delay(1000)
-                    binding.progressbar.isVisible = false
+                    loadingDialog?.dismissDialog()
                     createAlertDialog("Your comment has been successfully saved.")
                     alertDialog.show()
                 }

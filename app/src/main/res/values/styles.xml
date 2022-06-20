@@ -9,4 +9,8 @@
         <item name="android:fontFamily">@font/nunito_sans</item>
         <item name="android:textSize">18sp</item>
     </style>
+
+    <style name="progressBarColor" parent="@style/Theme.AppCompat">
+        <item name="colorAccent">@color/text_color</item>
+    </style>
 </resources>
